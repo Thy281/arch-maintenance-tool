@@ -26,8 +26,12 @@ else
     echo "No orphan packages to remove."
 fi
 
-# 4. Check for failed systemd services
-echo -e "\n${GREEN}4. Checking for failed services...${NC}"
+# 4. Clean system logs (keep only the last 2 weeks)
+echo -e "\n${GREEN}4. Cleaning system logs (journalctl)...${NC}"
+sudo journalctl --vacuum-time=2weeks
+
+# 5. Check for failed systemd services
+echo -e "\n${GREEN}5. Checking for failed services...${NC}"
 failed_services=$(systemctl --failed --quiet)
 if [[ $failed_services ]]; then
     systemctl --failed
