@@ -44,5 +44,4 @@ This script is integrated into my environment via the shortcut:
 ## 👨‍💻 Autor / Author
 **Hugo Lima**
 * 🎓 **Estudante**: 3º ano do Ensino Médio.
-* 🎯 **Objetivo**: Engenharia de Software na Europa (2027).
 * 🛠️ **Main OS**: Arch Linux / Hyprland.
