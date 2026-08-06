@@ -1,47 +1,213 @@
-# Arch Maintenance Tool 🛠️
+# Unix Maintenance Tool 🛠️
 
 > **Status:** Stable / Estável  
-> **Target System:** Arch Linux 
+> **Supported Systems:** Arch Linux • macOS
 
 [Português](#português) | [English](#english)
 
 ---
 
-## Português
+# Português
 
-### 📝 Descrição
-Este projeto é uma ferramenta de automação em Bash desenvolvida para simplificar a rotina de manutenção no Arch Linux. O script centraliza tarefas essenciais de limpeza e atualização para manter o sistema rápido e estável.
+## 📝 Descrição
 
-### 🚀 Funcionalidades
-* **Atualização Geral**: Sincroniza e atualiza todos os pacotes via `pacman`.
-* **Limpeza de Cache**: Remove arquivos de instalação antigos para poupar espaço em disco.
-* **Remoção de Órfãos**: Detecta e remove pacotes que não são mais necessários ao sistema.
-* **Saúde do Sistema**: Limpa logs temporários e otimiza o banco de dados do gerenciador de pacotes.
-
-### ⌨️ Integração Hyprland
-O script foi integrado ao meu ambiente através do atalho:
-* **`SUPER + SHIFT + M`**: Executa a manutenção completa em uma nova instância do terminal Kitty.
+O **Unix Maintenance Tool** é um script em Bash desenvolvido para automatizar tarefas de manutenção em sistemas Unix-like. Atualmente suporta **Arch Linux** e **macOS**, executando atualizações, limpeza do sistema e verificações de integridade para manter o ambiente sempre atualizado e otimizado.
 
 ---
 
-## English
+## 🚀 Funcionalidades
 
-### 📝 Description
-A Bash automation tool developed to simplify the maintenance routine on Arch Linux. This script centralizes essential cleaning and update tasks to keep the system fast and stable.
+### 🐧 Arch Linux
 
-### 🚀 Features
-* **Full Update**: Synchronizes and updates all packages via `pacman`.
-* **Cache Cleanup**: Removes old installation files to save disk space.
-* **Orphan Removal**: Detects and removes packages no longer needed by the system.
-* **System Health**: Cleans temporary logs and optimizes the package manager database.
+- 📦 Atualização completa do sistema (`pacman`)
+- 🧹 Limpeza do cache de pacotes
+- 🗑️ Remoção de dependências órfãs
+- ⚡ Limpeza de arquivos temporários
+- 🔧 Otimização do banco de dados do Pacman
 
-### ⌨️ Hyprland Integration
-This script is integrated into my environment via the shortcut:
-* **`SUPER + SHIFT + M`**: Runs full maintenance in a new Kitty terminal instance.
+### 🍎 macOS
+
+- 🍺 Atualização do Homebrew (`brew update`)
+- 📦 Atualização dos pacotes instalados (`brew upgrade`)
+- 🧹 Remoção de dependências não utilizadas (`brew autoremove`)
+- 🗑️ Limpeza do cache (`brew cleanup`)
+- 🩺 Diagnóstico do Homebrew (`brew doctor`)
+- ⚙️ Listagem dos serviços (`brew services list`)
 
 ---
 
-## 👨‍💻 Autor / Author
-**Hugo Lima**
-* 🎓 **Estudante**: 3º ano do Ensino Médio.
-* 🛠️ **Main OS**: Arch Linux / Hyprland.
+## 📂 Estrutura
+
+```
+.
+├── arch-maintenance.sh
+├── macos-maintenance.sh
+└── README.md
+```
+
+---
+
+## 📋 Requisitos
+
+### Arch Linux
+
+- pacman
+- sudo
+
+### macOS
+
+- Homebrew
+
+Instalação do Homebrew:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+---
+
+## ▶️ Como usar
+
+Clone o repositório
+
+```bash
+git clone https://github.com/Thy281/unix-maintenance-tool.git
+```
+
+Entre na pasta
+
+```bash
+cd unix-maintenance-tool
+```
+
+Permita execução
+
+```bash
+chmod +x *.sh
+```
+
+### Executar no Arch Linux
+
+```bash
+./arch-maintenance.sh
+```
+
+### Executar no macOS
+
+```bash
+./macos-maintenance.sh
+```
+
+---
+
+## 🔄 Fluxo de execução
+
+### Arch Linux
+
+```
+Pacman Update
+      ↓
+System Upgrade
+      ↓
+Cache Cleanup
+      ↓
+Orphan Removal
+      ↓
+Database Optimization
+```
+
+### macOS
+
+```
+brew update
+      ↓
+brew upgrade
+      ↓
+brew autoremove
+      ↓
+brew cleanup
+      ↓
+brew doctor
+      ↓
+brew services list
+```
+
+---
+
+## 🎯 Objetivo
+
+Este projeto foi criado para simplificar a manutenção de diferentes sistemas operacionais Unix, automatizando tarefas repetitivas de atualização, limpeza e verificação do ambiente através de scripts Bash.
+
+---
+
+# English
+
+## 📝 Description
+
+**Unix Maintenance Tool** is a Bash automation script designed to simplify routine maintenance on Unix-like operating systems. It currently supports **Arch Linux** and **macOS**, performing updates, cleanup and health checks to keep the system optimized.
+
+---
+
+## 🚀 Features
+
+### 🐧 Arch Linux
+
+- Full system update
+- Package cache cleanup
+- Orphan package removal
+- Temporary files cleanup
+- Pacman database optimization
+
+### 🍎 macOS
+
+- Homebrew update
+- Package upgrades
+- Remove unused dependencies
+- Homebrew cache cleanup
+- Homebrew diagnostics
+- Homebrew services inspection
+
+---
+
+## 📋 Requirements
+
+### Arch Linux
+
+- pacman
+
+### macOS
+
+- Homebrew
+
+---
+
+## ▶️ Usage
+
+```bash
+git clone https://github.com/Thy281/unix-maintenance-tool.git
+cd unix-maintenance-tool
+chmod +x *.sh
+```
+
+Run on Arch:
+
+```bash
+./arch-maintenance.sh
+```
+
+Run on macOS:
+
+```bash
+./macos-maintenance.sh
+```
+
+---
+
+## 👨‍💻 Author
+
+**Hugo Quesada**
+
+- ☕ Java Backend Developer
+- 🔐 Cybersecurity Enthusiast
+- 🐧 Linux • 🍎 macOS • 🐳 Docker
+- 🇧🇷 Brazil
