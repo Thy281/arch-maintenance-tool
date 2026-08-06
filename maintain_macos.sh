@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# --- Arch Linux Maintenance Tool ---
+# --- MacOS Maintenance Tool ---
 # Author: Hugo Lima Quesada Soares
 # Description: Automates system updates and cleaning.
 
