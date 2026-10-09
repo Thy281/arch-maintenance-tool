@@ -1,5 +1,8 @@
- Lima Quesada Soares
-# Description: Automates Homebrew updates and cleaning.
+#!/bin/bash
+
+# --- MacOS Maintenance Tool ---
+# Author: Hugo Lima Quesada Soares
+# Description: Automates system updates and cleaning.
 
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
