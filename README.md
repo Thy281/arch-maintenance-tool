@@ -1,7 +1,7 @@
-# Unix Maintenance Tool 🛠️
+# System Maintenance Tool 🛠️
 
 > **Status:** Stable / Estável  
-> **Supported Systems:** Arch Linux • macOS
+> **Supported Systems:** Arch Linux • macOS • Windows
 
 [Português](#português) | [English](#english)
 
@@ -11,7 +11,7 @@
 
 ## 📝 Descrição
 
-O **Unix Maintenance Tool** é um script em Bash desenvolvido para automatizar tarefas de manutenção em sistemas Unix-like. Atualmente suporta **Arch Linux** e **macOS**, executando atualizações, limpeza do sistema e verificações de integridade para manter o ambiente sempre atualizado e otimizado.
+O **System Maintenance Tool** reúne scripts Bash e PowerShell para automatizar tarefas de manutenção. Atualmente suporta **Arch Linux**, **macOS** e **Windows**, executando atualizações, limpeza do sistema e verificações de integridade para manter o ambiente atualizado e otimizado.
 
 ---
 
@@ -34,14 +34,23 @@ O **Unix Maintenance Tool** é um script em Bash desenvolvido para automatizar t
 - 🩺 Diagnóstico do Homebrew (`brew doctor`)
 - ⚙️ Listagem dos serviços (`brew services list`)
 
+### 🪟 Windows
+
+- 🔄 Verificação e instalação de atualizações do Windows (`PSWindowsUpdate`)
+- 🧹 Limpeza dos arquivos temporários do usuário
+- 🛠️ Limpeza de componentes antigos do Windows (`DISM`)
+- 🗑️ Esvaziamento da Lixeira
+- 🔍 Listagem de serviços automáticos parados para inspeção
+
 ---
 
 ## 📂 Estrutura
 
 ```
 .
-├── arch-maintenance.sh
-├── macos-maintenance.sh
+├── maintain_archlinux.sh
+├── maintain_macos.sh
+├── maintain_windows.sh
 └── README.md
 ```
 
@@ -64,6 +73,19 @@ Instalação do Homebrew:
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
+### Windows
+
+- Windows 10 ou Windows 11
+- PowerShell
+- Permissões de administrador
+- Módulo `PSWindowsUpdate` para atualizar o sistema
+
+Instalação do módulo `PSWindowsUpdate`:
+
+```powershell
+Install-Module PSWindowsUpdate -Scope AllUsers
+```
+
 ---
 
 ## ▶️ Como usar
@@ -71,13 +93,13 @@ Instalação do Homebrew:
 Clone o repositório
 
 ```bash
-git clone https://github.com/Thy281/unix-maintenance-tool.git
+git clone https://github.com/Thy281/arch-maintenance-tool.git
 ```
 
 Entre na pasta
 
 ```bash
-cd unix-maintenance-tool
+cd arch-maintenance-tool
 ```
 
 Permita execução
@@ -89,13 +111,21 @@ chmod +x *.sh
 ### Executar no Arch Linux
 
 ```bash
-./arch-maintenance.sh
+./maintain_archlinux.sh
 ```
 
 ### Executar no macOS
 
 ```bash
-./macos-maintenance.sh
+./maintain_macos.sh
+```
+
+### Executar no Windows
+
+Abra o PowerShell como administrador e execute:
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File .\maintain_windows.sh
 ```
 
 ---
@@ -136,7 +166,7 @@ brew services list
 
 ## 🎯 Objetivo
 
-Este projeto foi criado para simplificar a manutenção de diferentes sistemas operacionais Unix, automatizando tarefas repetitivas de atualização, limpeza e verificação do ambiente através de scripts Bash.
+Este projeto foi criado para simplificar a manutenção de diferentes sistemas operacionais, automatizando tarefas repetitivas de atualização, limpeza e verificação do ambiente através de scripts Bash e PowerShell.
 
 ---
 
@@ -144,7 +174,7 @@ Este projeto foi criado para simplificar a manutenção de diferentes sistemas o
 
 ## 📝 Description
 
-**Unix Maintenance Tool** is a Bash automation script designed to simplify routine maintenance on Unix-like operating systems. It currently supports **Arch Linux** and **macOS**, performing updates, cleanup and health checks to keep the system optimized.
+**System Maintenance Tool** combines Bash and PowerShell scripts to simplify routine system maintenance. It currently supports **Arch Linux**, **macOS** and **Windows**, performing updates, cleanup and health checks to keep systems optimized.
 
 ---
 
@@ -167,6 +197,14 @@ Este projeto foi criado para simplificar a manutenção de diferentes sistemas o
 - Homebrew diagnostics
 - Homebrew services inspection
 
+### 🪟 Windows
+
+- Check and install Windows updates (`PSWindowsUpdate`)
+- Clean user temporary files
+- Clean old Windows components (`DISM`)
+- Empty the Recycle Bin
+- List stopped automatic services for inspection
+
 ---
 
 ## 📋 Requirements
@@ -179,26 +217,45 @@ Este projeto foi criado para simplificar a manutenção de diferentes sistemas o
 
 - Homebrew
 
+### Windows
+
+- Windows 10 or Windows 11
+- PowerShell
+- Administrator privileges
+- `PSWindowsUpdate` module for system updates
+
+Install the `PSWindowsUpdate` module:
+
+```powershell
+Install-Module PSWindowsUpdate -Scope AllUsers
+```
+
 ---
 
 ## ▶️ Usage
 
 ```bash
-git clone https://github.com/Thy281/unix-maintenance-tool.git
-cd unix-maintenance-tool
+git clone https://github.com/Thy281/arch-maintenance-tool.git
+cd arch-maintenance-tool
 chmod +x *.sh
 ```
 
 Run on Arch:
 
 ```bash
-./arch-maintenance.sh
+./maintain_archlinux.sh
 ```
 
 Run on macOS:
 
 ```bash
-./macos-maintenance.sh
+./maintain_macos.sh
+```
+
+Run on Windows in PowerShell as Administrator:
+
+```powershell
+powershell.exe -ExecutionPolicy Bypass -File .\maintain_windows.sh
 ```
 
 ---
